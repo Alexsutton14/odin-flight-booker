@@ -1,1 +1,10 @@
-Flights Index
+<form action="/" method="get">
+Start Airports:
+<br>
+<%= select_tag(:start_airport_id, options_for_select(@start_airports_select)) %>
+<br>
+<input type="submit" value="Search for flights">
+<br>
+Destination Airports:
+<br>
+<%= @destination_airports_select %>
