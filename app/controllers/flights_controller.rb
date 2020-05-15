@@ -10,7 +10,7 @@ class FlightsController < ApplicationController
         if(@destination_airports_select == nil)
             @destination_airports_select = ["-"]
         end
-        @start_airports_select = Airport.all.map{ |a| [a.code, a.id]}        
+        @start_airports_select = Airport.all.map{ |a| [a.code, a.id]}
     end
 
     private

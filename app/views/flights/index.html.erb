@@ -1,11 +1,11 @@
 <%= @params %>
 <br>
-<%= form_tag('/', method: :get) do %>
+<%= form_tag('/', method: :get)%>
 <%= label_tag(:start_airport_id, "Flying from:") %>
 <%= select_tag(:start_airport_id, options_for_select(@start_airports_select, @selected_start)) %>
 <%= submit_tag("Get Destinations", :name => nil) %>
-<% end %>
 </form>
+
 <br>
 Destination Airports:
 <br>
