@@ -1,5 +1,3 @@
-<%= @params %>
-<br>
 <form action="/" method="get" class="form">
     <div class="options-container">
         <div class="search-item">
@@ -22,11 +20,11 @@
     <div class="search-submit">
         <%= submit_tag("Find Flights", :name => nil, class: "item-element") %>
     </div>
-    <% if @selected_routes != nil %>
+    <% if @flights != nil %>
         <div class="routes-display">
-            <% @selected_routes.each do |r| %>
+            <% @flights.each do |f| %>
                 <div class="route">
-                    <a>Route <%= r.id %></a>
+                    <a><%= f.start_airport.code %> to <%= f.end_airport.code %> on <%= f.date %> at <%= f.time_string %></a>
                 </div>
             <% end %>
         </div>

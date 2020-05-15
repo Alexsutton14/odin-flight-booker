@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(version: 2020_05_14_182847) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "routes", force: :cascade do |t|
+  create_table "flights", force: :cascade do |t|
     t.integer "start_airport_id"
     t.integer "end_airport_id"
     t.integer "duration"
+    t.datetime "datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
