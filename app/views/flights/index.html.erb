@@ -1,10 +1,14 @@
-<form action="/" method="get">
-Start Airports:
+<%= @params %>
 <br>
-<%= select_tag(:start_airport_id, options_for_select(@start_airports_select)) %>
-<br>
-<input type="submit" value="Search for flights">
+<%= form_tag('/', method: :get) do %>
+<%= label_tag(:start_airport_id, "Flying from:") %>
+<%= select_tag(:start_airport_id, options_for_select(@start_airports_select, @selected_start)) %>
+<%= submit_tag("Get Destinations", :name => nil) %>
+<% end %>
+</form>
 <br>
 Destination Airports:
 <br>
-<%= @destination_airports_select %>
+<form action="/" method="get">
+<%= select_tag(:end_airport_id, options_for_select(@destination_airports_select)) %>
+<%= submit_tag("Find Flights", :name => nil) %>
