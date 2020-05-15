@@ -17,3 +17,4 @@ Route.create(start_airport: Airport.find(4), end_airport: Airport.find(8), durat
 Route.create(start_airport: Airport.find(8), end_airport: Airport.find(4), duration: 643)
 Route.create(start_airport: Airport.find(1), end_airport: Airport.find(6), duration: 66)
 Route.create(start_airport: Airport.find(6), end_airport: Airport.find(1), duration: 497)
+Route.create(start_airport: Airport.find(1), end_airport: Airport.find(3), duration: 497)

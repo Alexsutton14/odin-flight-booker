@@ -22,4 +22,13 @@
     <div class="search-submit">
         <%= submit_tag("Find Flights", :name => nil, class: "item-element") %>
     </div>
+    <% if @selected_routes != nil %>
+        <div class="routes-display">
+            <% @selected_routes.each do |r| %>
+                <div class="route">
+                    <a>Route <%= r.id %></a>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
 </form>
