@@ -1,7 +1,10 @@
 class FlightsController < ApplicationController
     def index
         @params = params
-        @airports_select = Airport.all.map{ |a| [a.code, a.code]}
+        if @params[:passengers].to_i > 4
+            @params[:passengers] = 4.to_s
+        end
+        @airports_select = Airport.all.map{ |a| [a.name, a.code]}
     end
 
     private

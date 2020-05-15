@@ -1,13 +1,25 @@
 <%= @params %>
 <br>
-<form action="/" method="get">
-<%= label_tag(:start_code, "Flying from:") %>
-<%= select_tag(:start_code, options_for_select(@airports_select, params[:start_code])) %>
-<%= label_tag(:end_code, "Flying to:") %>
-<%= select_tag(:end_code, options_for_select(@airports_select, params[:end_code])) %>
-<%= label_tag(:date, "Date:") %>
-<%= date_field_tag(:date, params[:date]) %>
-<%= label_tag(:passengers, "Number of passengers:") %>
-<%= number_field_tag(:passengers, 1, min: 1, max: 4) %>
-<%= submit_tag("Find Flights", :name => nil) %>
+<form action="/" method="get" class="form">
+    <div class="options-container">
+        <div class="search-item">
+            <%= label_tag(:start_code, "Flying from:", class: "item-element") %>
+            <%= select_tag(:start_code, options_for_select(@airports_select, params[:start_code]), class: "item-element") %>
+        </div>
+        <div class="search-item">
+            <%= label_tag(:end_code, "Flying to:", class: "item-element") %>
+            <%= select_tag(:end_code, options_for_select(@airports_select, params[:end_code]), class: "item-element") %>
+        </div>
+        <div class="search-item">
+            <%= label_tag(:date, "Date:", class: "item-element") %>
+            <%= date_field_tag(:date, params[:date], class: "item-element") %>
+        </div>
+        <div class="search-item">
+            <%= label_tag(:passengers, "Number of passengers:", class: "item-element") %>
+            <%= number_field_tag(:passengers, params[:passengers], min: 1, max: 4, class: "item-element") %>
+        </div>
+    </div>
+    <div class="search-submit">
+        <%= submit_tag("Find Flights", :name => nil, class: "item-element") %>
+    </div>
 </form>

@@ -1,12 +1,12 @@
 #Airports
-Airport.create(code: 'MAN')
-Airport.create(code: 'LPL')
-Airport.create(code: 'MCO')
-Airport.create(code: 'LGW')
-Airport.create(code: 'LAS')
-Airport.create(code: 'LHR')
-Airport.create(code: 'JFK')
-Airport.create(code: 'LAX')
+Airport.create(code: 'MAN', name: 'Manchester')
+Airport.create(code: 'LPL', name: 'Liverpool')
+Airport.create(code: 'MCO', name: 'Orlando')
+Airport.create(code: 'LGW', name: 'London Gatwick')
+Airport.create(code: 'LAS', name: 'Las Vegas')
+Airport.create(code: 'LHR', name: 'London Heathrow')
+Airport.create(code: 'JFK', name: 'New York JFK')
+Airport.create(code: 'LAX', name: 'Los Angeles LAX')
 
 #Flights
 Flight.create(start_airport: Airport.find(1), end_airport: Airport.find(3), duration: 497)
