@@ -20,13 +20,18 @@
     <div class="search-submit">
         <%= submit_tag("Find Flights", :name => nil, class: "item-element") %>
     </div>
-    <% if @flights != nil %>
+</form>
+<% if @flights != nil %>
+    <%= form_with class: "form", local: true do %>
+        <%= hidden_field_tag(:passengers, params[:passengers]) %>
         <div class="routes-display">
             <% @flights.each do |f| %>
                 <div class="route">
+                    <%= radio_button("flight", "id", f.id) %>
                     <a><%= f.start_airport.code %> to <%= f.end_airport.code %> on <%= f.date %> at <%= f.time_string %></a>
                 </div>
             <% end %>
         </div>
+        <%= submit_tag("Book", :name => nil) %>
     <% end %>
-</form>
+<% end %>
