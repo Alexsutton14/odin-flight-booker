@@ -1,0 +1,14 @@
+Booking ID: <%= @booking.id %>
+<br>
+Booking made on: <%= @booking.created_at %>
+<br>
+Flying from: <%= @booking.flight.start_airport.name %> to <%= @booking.flight.end_airport.name %>
+<br>
+At: <%= @booking.flight.datetime %>
+<br>
+Passengers:
+<br>
+<% @booking.passengers.each do |p| %>
+    <%= p.name %>, <%= p.email %>
+    <br>
+<% end %>

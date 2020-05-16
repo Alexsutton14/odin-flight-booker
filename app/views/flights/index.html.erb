@@ -21,7 +21,7 @@
         <%= submit_tag("Find Flights", :name => nil, class: "item-element") %>
     </div>
 </form>
-<% if @flights != nil %>
+<% if @flights != nil && !@flights.empty? %>
     <%= form_with class: "form", local: true do %>
         <%= hidden_field_tag(:passengers, params[:passengers]) %>
         <div class="routes-display">
