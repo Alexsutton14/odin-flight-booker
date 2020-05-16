@@ -27,7 +27,7 @@
         <div class="routes-display">
             <% @flights.each do |f| %>
                 <div class="route">
-                    <%= radio_button("flight", "id", f.id) %>
+                    <%= radio_button(:flight, :id, f.id) %>
                     <a><%= f.start_airport.code %> to <%= f.end_airport.code %> on <%= f.date %> at <%= f.time_string %></a>
                 </div>
             <% end %>

@@ -1,0 +1,9 @@
+<%= form_with model: @booking, url: "/booking", class: "form", local: true do |f| %>
+    <a>Booking <%= @number_of_passengers %> tickets for <%= @flight.start_airport.code %> to <%= @flight.end_airport.code %> on <%= @flight.date %> at <%= @flight.time_string %></a>
+    <%= f.hidden_field(:flight_id, value: @flight.id) %>
+    <%= f.fields_for :passengers do |p| %>
+        Passenger <%= p.options[:child_index] + 1 %> Name: <%= p.text_field :name %>        
+        Passenger <%= p.options[:child_index] + 1 %> Email: <%= p.text_field :email %> 
+    <% end %>
+    <%= submit_tag("Book", name: nil) %>
+<% end %>
